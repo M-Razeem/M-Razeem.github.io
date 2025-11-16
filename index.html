@@ -13,6 +13,27 @@
     .project { background: #1b1b1b; padding: 20px; border-left: 5px solid #2b6cff; border-radius: 6px; margin-bottom: 25px; }
     .project img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 8px; margin-top: 12px; border: 1px solid #2b6cff33; }
     footer { text-align: center; padding: 20px; margin-top: 20px; color: #777; }
+    .project-images {
+      display: flex;           /* arrange images in a row */
+      gap: 15px;               /* space between images */
+      overflow-x: auto;        /* allow horizontal scrolling if needed */
+      padding-top: 12px;
+      scroll-behavior: smooth;
+    }
+
+    .project-images img {
+      height: 300px;           /* portrait height */
+      width: auto;             /* keep original width proportion */
+      object-fit: cover;       /* crop nicely if needed */
+      border-radius: 8px;
+      border: 1px solid #2b6cff33;
+      flex-shrink: 0;          /* prevent shrinking in row */
+    }
+
+    /* Optional: hide scrollbar for cleaner look */
+    .project-images::-webkit-scrollbar { height: 8px; }
+    .project-images::-webkit-scrollbar-thumb { background: #2b6cff88; border-radius: 4px; }
+    .project-images::-webkit-scrollbar-track { background: #1a1a1a; }
   </style>
 </head>
 <body>
@@ -51,7 +72,12 @@
         <h3>SKOL – Copy Trading Platform</h3>
         <p>SKOL is a high-performance copy-trading application built with Flutter. I designed and developed major parts of the interface and implemented the core trading functionalities. Users can connect with the Binance API, manage portfolios, and copy trades from top-performing traders.</p>
         <p>My work included API integration, advanced state management, secure data handling, and UI polishing. I also optimized loading times and improved user flow to ensure a seamless trading experience.</p>
-        <img src="assets/IMG-20251116-WA0001.jpg" alt="SKOL App Screenshot Placeholder"><img src="assets/IMG-20251116-WA0002.jpg" alt="SKOL App Screenshot Placeholder"><img src="assets/IMG-20251116-WA0003.jpg" alt="SKOL App Screenshot Placeholder"><img src="assets/IMG-20251116-WA0004.jpg" alt="SKOL App Screenshot Placeholder">
+        <div class="project-images">
+          <img src="assets/IMG-20251116-WA0001.jpg" alt="SKOL App Screenshot">
+          <img src="assets/IMG-20251116-WA0002.jpg" alt="SKOL App Screenshot">
+          <img src="assets/IMG-20251116-WA0003.jpg" alt="SKOL App Screenshot">
+          <img src="assets/IMG-20251116-WA0004.jpg" alt="SKOL App Screenshot">
+        </div>
       </div>
 
       <div class="project">
@@ -64,14 +90,22 @@
         <h3>Petzify – Pet Marketplace App</h3>
         <p>Petzify is an e-commerce style mobile application for pets, accessories, foods, and related services. I implemented several core features, improved user interaction, and worked closely with designers to match UI expectations. My contributions helped increase retention and made the app more intuitive.</p>
         <p>This project strengthened my skills in structured widget architecture, animations, Firebase storage, and responsive UI building.</p>
-        <img src="assets/WhatsApp Image 2025-11-16.jpg" alt="Petzify App Screenshot Placeholder"><img src="assets/WhatsApp Image 2025-11-16 (1).jpg" alt="Petzify App Screenshot Placeholder"><img src="assets/WhatsApp Image 2025-11-16 (2).jpg" alt="Petzify App Screenshot Placeholder">
+        <div class="project-images">
+          <img src="assets/WhatsApp Image 2025-11-16.jpg" alt="Petzify App Screenshot">
+          <img src="assets/WhatsApp Image 2025-11-16 (1).jpg" alt="Petzify App Screenshot">
+          <img src="assets/WhatsApp Image 2025-11-16 (2).jpg" alt="Petzify App Screenshot">
+        </div>
       </div>
 
       <div class="project">
         <h3>Chess with Gemini – AI-Powered Chess Game</h3>
         <p>An intelligent chess application where users can play against a Gemini-based AI opponent. I implemented the game board mechanics, move tracking, and connected the logic with the AI engine. The goal was to create a challenging yet enjoyable experience for players of all levels.</p>
         <p>This project boosted my skills in algorithmic thinking, game-state logic, and handling dynamic UI updates.</p>
-        <img src="assets/Screenshot (519).png" alt="Chess App Screenshot Placeholder"><img src="assets/Screenshot (520).png" alt="Chess App Screenshot Placeholder"><img src="assets/Screenshot (521).png" alt="Chess App Screenshot Placeholder">
+        <div class="project-images">
+          <img src="assets/Screenshot (519).png" alt="Chess App Screenshot">
+          <img src="assets/Screenshot (520).png" alt="Chess App Screenshot">
+          <img src="assets/Screenshot (521).png" alt="Chess App Screenshot">
+        </div>
       </div>
 
     </div>

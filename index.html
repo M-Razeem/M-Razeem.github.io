@@ -21,6 +21,10 @@
       scroll-behavior: smooth;
     }
 
+    .project-images img:hover {
+      transform: scale(1.03);
+    }
+
     .project-images img {
       height: 300px;           /* portrait height */
       width: auto;             /* keep original width proportion */
@@ -34,6 +38,25 @@
     .project-images::-webkit-scrollbar { height: 8px; }
     .project-images::-webkit-scrollbar-thumb { background: #2b6cff88; border-radius: 4px; }
     .project-images::-webkit-scrollbar-track { background: #1a1a1a; }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      cursor: zoom-out;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
   </style>
 </head>
 <body>
@@ -125,5 +148,26 @@
   <footer>
     Temporary Portfolio © 2025
   </footer>
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoomed Image">
+  </div>
+
+  <script>
+    // Select all project images
+    const images = document.querySelectorAll('.project-images img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
